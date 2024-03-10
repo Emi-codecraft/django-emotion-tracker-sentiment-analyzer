@@ -1,0 +1,52 @@
+<!-- upload.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentimental Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main1.css' %}"/>
+
+</head>
+<body>
+    <h1>Sentimental Analysis</h1>
+
+    {% if emotion %}
+        <p>Overall Emotion: {{ emotion }}</p>
+    {% endif %}
+
+    {% if file_type_error %}
+        <p style="color: red;">{{ file_type_error }}</p>
+    {% endif %}
+
+    {% if results %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Sentence</th>
+                    <th>Emotion</th>
+                    <th>Sentiment</th>
+                    <th>Emoji</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results.results %}
+                    <tr>
+                        <td>{{ result.sentence }}</td>
+                        <td>{{ result.emotion }}</td>
+                        <td>{{ result.sentiment }}</td>
+                        <td>{{ result.emoji }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <form method="post" action="{% url 'analyze_sentiment' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" accept=".txt">
+        <input type="submit" value="Analyze">
+    </form>
+</body>
+</html>

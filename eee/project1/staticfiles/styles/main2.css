@@ -1,0 +1,21 @@
+/* static/your_app/css/style.css */
+
+body {
+    font-family: 'Balsamiq Sans', sans-serif;
+    background: linear-gradient(to right, #30CFD0, #330867);
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 3em;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+/* Add any additional styles or animations you want */

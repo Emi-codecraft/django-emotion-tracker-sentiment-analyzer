@@ -1,0 +1,58 @@
+/* main.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://via.placeholder.com/1920x1080/000080/000000?text=') center/cover no-repeat, #000080;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background 2s ease; /* Add transition for smooth background change */
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 0;
+    color: #fff;
+    font-size: 5.0em;
+    animation: fadeInDown 2s ease;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1.5em;
+    display: inline-block;
+    margin: 20px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background-color: #cc9cd3;
+    color: rgb(24, 20, 20);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+a:hover {
+    background-color: #ddb954;
+    color: #545488;
+    transform: scale(1.1);
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

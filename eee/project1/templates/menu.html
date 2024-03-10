@@ -1,0 +1,44 @@
+<!-- templates/menu.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioEmofy</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles/main.css" />
+</head>
+<body>
+    <h1 id="audio-title">AudioEmofy</h1>
+    <div class="buttons">
+        <a class="menu-button" href="{% url 'sentimental_home' %}">Sentimental Analysis</a>
+        <a class="menu-button" href="{% url 'ebook_home' %}">Audiofy</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Array of emojis
+            const emojis = ["😊", "🌟", "🎉", "🚀", "💻", "🎵", "🌈", "🍀", "🌺", "🌍"];
+
+            // Function to get a random emoji from the array
+            function getRandomEmoji() {
+                const randomIndex = Math.floor(Math.random() * emojis.length);
+                return emojis[randomIndex];
+            }
+
+            // Function to set a random emoji as the background
+            function setRandomEmojiBackground() {
+                const audioTitle = document.getElementById("audio-title");
+                const randomEmoji = getRandomEmoji();
+                audioTitle.textContent = "AudioEmofy " + randomEmoji;
+            }
+
+            // Set a random emoji initially
+            setRandomEmojiBackground();
+
+            // Set a new random emoji every 5 seconds (you can adjust the interval)
+            setInterval(setRandomEmojiBackground, 5000);
+        });
+    </script>
+</body>
+</html>

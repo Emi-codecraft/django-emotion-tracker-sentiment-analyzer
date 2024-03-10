@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../static/styles/main2.css" />
+    <script src="https://unpkg.com/sentiment/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>eBook</title>
+</head>
+<body>
+   
+    <div class="navigation-bar"
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo">Audiofy</a>
+            </div>
+        </nav>
+    </div>
+    <div class="container" style="margin-top:20px; width:80%">
+        <div class="row">
+            <div id="myEmotion" style="margin-top: -12px;margin-bottom: 0px;padding: 0px;font-size:100px">
+                &#128528;
+            </div>
+            <div class="input-field col s12">
+                <input id="emotionInput" type="text" class="validate" placeholder="Enter emotion (e.g., fun, happy, hate, neutral, relief, sad, worry)">
+            </div>
+            <button class="waves-effect waves-light btn" onclick="changeEmojiAndPlay()">Change Emoji</button>
+        </div>
+
+        <center>
+            <div>
+                <audio id="myAudioFun">
+                    {% load static %} <source src="{% static "audiofy/fun.mp3" %}" type="audio/mpeg"> Your browser does not support the audio element.
+                </audio>
+
+                <audio id="myAudioHappy">
+                    {% load static %} <source src="{% static "audiofy/happy.mp3" %}" type="audio/mpeg"> Your browser does not support the audio element.
+                </audio>
+
+                <audio id="myAudioHate">
+                    {% load static %} <source src="{% static "audiofy/hate.mp3" %}" type="audio/mpeg"> Your browser does not support the audio element.
+                </audio>
+
+                <audio id="myAudioNeutral">
+                    {% load static %} <source src="{% static "audiofy/neutral.mp3" %}" type="audio/mpeg"> Your browser does not support the audio element.
+                </audio>
+
+                <audio id="myAudioRelief">
+                    {% load static %} <source src="{% static "audiofy/relief.mp3" %}" type="audio/mpeg"> Your browser does not support the audio element.
+                </audio>
+
+                <audio id="myAudioSad">
+                    {% load static %} <source src="{% static "audiofy/sad.mp3" %}" type="audio/mpeg"> Your browser does not support the audio element.
+                </audio>
+
+                <audio id="myAudioWorry">
+                    {% load static %} <source src="{% static "audiofy/worry.mp3" %}" type="audio/mpeg"> Your browser does not support the audio element.
+                </audio>
+            </div>
+        </center>
+    </div>
+
+    <script type="text/javascript">
+        const contentEmotion = document.getElementById("myEmotion");
+
+        const emojiMapper = {
+            fun: "&#127911;",
+            happy: "&#128522;",
+            hate: "&#128545;",
+            neutral: "&#128528;",
+            relief: "&#128522;",  // You can replace this with the actual relief emoji code
+            sad: "&#128532;",
+            worry: "&#128546;",
+        };
+
+        const audioMapper = {
+            fun: "myAudioFun",
+            happy: "myAudioHappy",
+            hate: "myAudioHate",
+            neutral: "myAudioNeutral",
+            relief: "myAudioRelief",
+            sad: "myAudioSad",
+            worry: "myAudioWorry",
+        };
+
+        function playSong(emotion) {
+            // Pause the currently playing audio
+            const audioElements = document.querySelectorAll("audio");
+            audioElements.forEach((audio) => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+
+            // Play the selected audio
+            const audioId = audioMapper[emotion];
+            const audio = document.getElementById(audioId);
+            audio.play();
+        }
+
+        function changeEmojiAndPlay() {
+            const emotionInput = document.getElementById("emotionInput").value.toLowerCase();
+            const emoji = emojiMapper[emotionInput] || "&#128528;";
+            contentEmotion.innerHTML = emoji;
+            playSong(emotionInput);
+
+            // Clear input field
+            document.getElementById("emotionInput").value = "";
+        }
+    </script>
+</body>
+</html>
