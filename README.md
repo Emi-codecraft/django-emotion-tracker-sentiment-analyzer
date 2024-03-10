@@ -33,7 +33,7 @@ Become a part of the Audiofy adventure! Open issues, submit pull requests, and s
 
 ## Author
 
-Crafted with ❤️ by [Your Name]
+Crafted with ❤️ by Emimaal
 
 🔗 **LinkedIn:**
 Connect with me on [LinkedIn](https://www.linkedin.com/in/emimaal-s-02952127a) for more exciting updates!
