@@ -29,7 +29,7 @@ Welcome to Audiofy, a Django-powered web application that takes your eBook exper
 
 ---
 
-### Based on your Emotion you can read Stories
+### Based on your Emotion you can read Stories with relevant Music
 ![Story Page](img/output4.png)
 
 ---
