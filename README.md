@@ -12,6 +12,41 @@ Welcome to Audiofy, a Django-powered web application that takes your eBook exper
 - **Curated Audio Library:** Immerse yourself in emotion-specific audio tracks for each sentiment.
 
 
+## 📸 Sample Output
+
+### Home Page
+![Home Page](img/output1.png)
+
+---
+
+### Ebook Audiofy Page
+![Ebook Audiofy Page](img/output2.png)
+
+---
+
+### Emotions Analysis And Sentimental Score
+![Emotions Analysis And Sentimental Score](img/output3.png)
+
+---
+
+### Based on your Emotion you can read Stories
+![Story Page](img/output4.png)
+
+---
+
+### Multiple Line Sentimental Analysis Page
+![Sentimental Analysis Page](img/output5.png)
+
+---
+
+### Uploading File get Result for Each sentence.
+![Uploading Text File & Get Results](img/output6.png)
+
+---
+
+
+
+
 ## Technologies Behind the Magic
 
 - **Django, TextBlob, Materialize CSS, Bootstrap, Google Fonts, jQuery, PDF.js, Sentiment**
