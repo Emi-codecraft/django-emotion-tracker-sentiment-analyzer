@@ -62,5 +62,5 @@ Become a part of the Audiofy adventure! Open issues, submit pull requests, and s
 
 
 🔗 **LinkedIn:**
-Connect with me on [LinkedIn](https://www.linkedin.com/in/emimaal-s-02952127a) for more exciting updates!
+Connect with me on [LinkedIn](https://in.linkedin.com/in/emimaal-samuvelraj-02952127a) for more exciting updates!
 
